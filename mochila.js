@@ -22,7 +22,7 @@ function buscaGulosa(objetos, capacidadeMaxima) {
         if (pesoAtual + itens[i].peso <= capacidadeMaxima) {
             mochila.push(objetos[i]);
             pesoAtual += objetos[i].peso;
-            custoTotal += objetos[i].valor;
+            custoTotal += objetos[i].custo;
         }
 
         if (pesoAtual === capacidadeMaxima) {
@@ -42,10 +42,10 @@ const itens = [
     new item('Caneta', 3, 5)
 ];
 
-const capacidadeMaxima = 20;
+const capacidadeMaxima = 30;
 
 const resultado = buscaGulosa(itens, capacidadeMaxima);
 console.log("Capacidade máxima da mochila:", capacidadeMaxima);
 console.log("Itens na mochila:", resultado.mochila);
 console.log("Peso total dos itens na mochila:", resultado.pesoAtual);
-console.log("Custo total dos itens na mochila:", resultado.valorTotal);
+console.log("Custo total dos itens na mochila: R$", resultado.custoTotal);
